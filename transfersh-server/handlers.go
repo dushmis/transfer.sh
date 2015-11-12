@@ -246,7 +246,7 @@ func postHandler(w http.ResponseWriter, r *http.Request) {
 
 			}
 
-			fmt.Fprintf(w, "https://%s/%s/%s\n", ipAddrFromRemoteAddr(r.Host), token, filename)
+			fmt.Fprintf(w, "http://%s/%s/%s\n", ipAddrFromRemoteAddr(r.Host), token, filename)
 		}
 	}
 }
@@ -362,7 +362,7 @@ func putHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/plain")
 
-	fmt.Fprintf(w, "https://%s/%s/%s\n", ipAddrFromRemoteAddr(r.Host), token, filename)
+	fmt.Fprintf(w, "http://%s/%s/%s\n", ipAddrFromRemoteAddr(r.Host), token, filename)
 }
 
 func zipHandler(w http.ResponseWriter, r *http.Request) {
