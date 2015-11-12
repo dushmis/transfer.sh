@@ -579,18 +579,19 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 
 func RedirectHandler(h http.Handler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		// log.Printf("======= %s",ipAddrFromRemoteAddr(r.Host))
 		if r.URL.Path == "/health.html" {
 		} else if ipAddrFromRemoteAddr(r.Host) == "127.0.0.1" {
 		} else if strings.HasSuffix(ipAddrFromRemoteAddr(r.Host), ".elasticbeanstalk.com") {
 		} else if ipAddrFromRemoteAddr(r.Host) == "jxm5d6emw5rknovg.onion" {
 		} else if ipAddrFromRemoteAddr(r.Host) == "transfer.sh" {
-			if r.Header.Get("X-Forwarded-Proto") != "https" && r.Method == "GET" {
-				http.Redirect(w, r, "https://transfer.sh"+r.RequestURI, 301)
-				return
-			}
+			// if r.Header.Get("X-Forwarded-Proto") != "https" && r.Method == "GET" {
+				// http.Redirect(w, r, "https://transfer.sh"+r.RequestURI, 301)
+				// return
+			// }
 		} else if ipAddrFromRemoteAddr(r.Host) != "transfer.sh" {
-			http.Redirect(w, r, "https://transfer.sh"+r.RequestURI, 301)
-			return
+			// http.Redirect(w, r, "https://transfer.sh"+r.RequestURI, 301)
+			// return
 		}
 
 		h.ServeHTTP(w, r)
@@ -600,9 +601,9 @@ func RedirectHandler(h http.Handler) http.HandlerFunc {
 // Create a log handler for every request it receives.
 func LoveHandler(h http.Handler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("x-made-with", "<3 by DutchCoders")
-		w.Header().Set("x-served-by", "Proudly served by DutchCoders")
-		w.Header().Set("Server", "Transfer.sh HTTP Server 1.0")
+		// w.Header().Set("x-made-with", "<3 by DutchCoders")
+		// w.Header().Set("x-served-by", "Proudly served by DutchCoders")
+		w.Header().Set("Server", "Cloudra.in HTTP Server 2.0")
 		h.ServeHTTP(w, r)
 	}
 }
