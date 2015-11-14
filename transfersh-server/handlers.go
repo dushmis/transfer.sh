@@ -156,7 +156,7 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	} else {
-		tmpl, err := text_template.ParseFiles("static/index.txt")
+		tmpl, err := text_template.ParseFiles("static/index.html")
 
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)

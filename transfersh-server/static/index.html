@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html class="no-js" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
 <!--<![endif]-->
 
 <head>
@@ -11,12 +11,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>cloudra.in - Dealing with files doesn't have to suck.</title>
     <meta name="description" content="Dealing with files doesn't have to suck.">
+
+  <meta property="og:site_name" content="Cloudra.in" />
+  <meta property="og:title" content="Dealing with files doesn't have to suck." />
+  <meta property="og:description" content="Dealing with files doesn't have to suck. Share your files directly from terminal..." />
+  <meta property="og:image" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://cloudra.in" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="/styles/main.css">
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,300' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
     <script src="/scripts/vendor/modernizr.js"></script>
+
 </head>
 
 
@@ -35,8 +44,8 @@
             a.src = g;
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        //ga('create', 'UA-40833733-1', 'cloudra.in');
-        //ga('send', 'pageview');
+        ga('create', 'UA-56213587-1', 'auto');
+        ga('send', 'pageview');
     </script>
 
         <div id="navigation">
@@ -82,7 +91,7 @@
                         <code>
                             <br>
                             <span class="code-title"># Upload from web</span>
-                            <br>Drag your files here, or <a class="browse" href="#"> click to browse. <br/></a>
+                            <br>Drag your files here, or <a class="browse" href="#" onclick="ga('send', 'event', 'on', 'browse');"> click to browse. <br/></a>
 
                         </code>
                         <input type="file" multiple="multiple" style='display: none;' />
@@ -96,7 +105,7 @@
                                 <span class="code-title"># Download all your files</span>
                                 <br/>
                                 <br/>
-                                <a class="download-zip btn-cta" href="#">zip</a> <a class="download-tar btn-cta" href="#">tar.gz</a>
+                                <a class="download-zip btn-cta" href="#" onclick="ga('send', 'event', 'on', 'download-zip');">zip</a> <a class="download-tar btn-cta" href="#" onclick="ga('send', 'event', 'on', 'download-tar-gz');">tar.gz</a>
                             </div>
                         </div>
                     </div>
@@ -199,7 +208,7 @@
             </div>
 
 
-            <a class="btn-cta" data-target="#coll" data-toggle="collapse">More examples</a>
+            <a class="btn-cta" data-target="#coll" data-toggle="collapse" onlick="ga('send', 'event', 'on', 'showmore');">More examples</a>
 
             <div class="collapse " id="coll">
                 <div class="row">
@@ -355,7 +364,7 @@
             <h2 class="page-title">
                 Any questions?
             </h2>
-            <a href="#" data-uv-trigger class="btn-cta">contact us</a>
+            <a href="#" data-uv-trigger class="btn-cta" onclick="ga('send', 'event', 'on', 'contact');">contact us</a>
         </div>
     </section>
 
